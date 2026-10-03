@@ -1,0 +1,19 @@
+{
+  "name": "citadel-campus-presentation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Matt Brigida's Department Head campus presentation for The Citadel",
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "serve": "node scripts/serve.mjs",
+    "pdf": "node scripts/export-pdf.mjs",
+    "vendor": "node scripts/vendor-reveal.mjs",
+    "check": "node scripts/check-deck.mjs"
+  },
+  "devDependencies": {
+    "reveal.js": "5.2.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
