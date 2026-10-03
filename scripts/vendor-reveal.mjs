@@ -7,7 +7,7 @@ const destination = resolve(root, "vendor/reveal");
 
 rmSync(destination, { recursive: true, force: true });
 mkdirSync(resolve(destination, "dist"), { recursive: true });
-for (const file of ["reset.css", "reveal.css", "reveal.esm.js"]) {
+for (const file of ["reset.css", "reveal.css", "reveal.js"]) {
   cpSync(resolve(source, "dist", file), resolve(destination, "dist", file));
 }
 cpSync(resolve(source, "plugin/notes"), resolve(destination, "plugin/notes"), { recursive: true });

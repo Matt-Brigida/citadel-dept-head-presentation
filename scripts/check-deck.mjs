@@ -13,6 +13,8 @@ if (timings.reduce((sum, timing) => sum + timing, 0) !== 1500) failures.push("sl
 if (html.includes("—")) failures.push("found an em dash in slides or notes");
 if (!html.includes("TODO:")) failures.push("expected visible verification TODOs");
 if (!html.includes("./vendor/reveal/")) failures.push("Reveal.js is not loaded locally");
+if (html.includes('type="module"')) failures.push("module scripts prevent direct-file fallback");
+if (!html.includes('vendor/reveal/dist/reveal.js')) failures.push("classic Reveal.js script is missing");
 
 if (failures.length) {
   console.error(failures.map((failure) => `FAIL: ${failure}`).join("\n"));

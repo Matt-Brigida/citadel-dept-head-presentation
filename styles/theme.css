@@ -1,11 +1,13 @@
 :root {
   --ink: #172027;
-  --muted: #5e696f;
-  --paper: #f7f5ef;
-  --paper-deep: #ebe7dc;
-  --accent: #8b2e3f;
-  --accent-dark: #682130;
-  --line: #cfc9bc;
+  --muted: #575856;
+  --paper: #ffffff;
+  --paper-deep: #d8dfe1;
+  --accent: #002856;
+  --accent-dark: #002856;
+  --accent-light: #7badd3;
+  --gold: #edae17;
+  --line: #d8dfe1;
 }
 
 html,
@@ -32,7 +34,7 @@ body {
 
 .reveal h1,
 .reveal h2 {
-  color: var(--ink);
+  color: var(--accent);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   letter-spacing: -0.035em;
@@ -464,10 +466,10 @@ body {
 }
 
 .todo-callout {
-  background: #fff4d7;
-  border: 1px solid #ddc277;
+  background: #fff8e7;
+  border: 1px solid var(--gold);
   bottom: 42px;
-  color: #5b4917;
+  color: var(--accent);
   font-size: 0.36em;
   left: 70px;
   padding: 10px 14px;
@@ -517,13 +519,13 @@ body {
 }
 
 .standards-card {
-  background: var(--ink);
+  background: var(--accent);
   color: white;
   padding: 28px;
 }
 
 .standards-card .label {
-  color: #e8b3bd;
+  color: var(--accent-light);
 }
 
 .standards-card > strong {
@@ -551,7 +553,7 @@ body {
 }
 
 .ratio-row span {
-  border: 1px solid #65727a;
+  border: 1px solid var(--accent-light);
   font-size: 0.35em;
   padding: 8px 10px;
 }
@@ -647,7 +649,7 @@ body {
 
 .engagement-band {
   align-items: center;
-  background: var(--ink);
+  background: var(--accent);
   bottom: 45px;
   color: white;
   display: flex;

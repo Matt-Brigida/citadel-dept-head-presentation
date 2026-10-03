@@ -20,8 +20,9 @@ open the speaker-notes window. The notes include cumulative timing cues for a
 25-minute talk.
 
 To simulate the interview environment, disconnect from the network and reload
-the presentation. Do not open `index.html` directly from the filesystem because
-browser module security rules can block the notes plugin.
+the presentation. The preferred path is the local server, but the deck now also
+uses classic local scripts so `index.html` can be opened directly as an emergency
+fallback.
 
 ### Export to PDF
 
