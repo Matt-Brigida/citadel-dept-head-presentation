@@ -8,6 +8,7 @@
   --accent-light: #7badd3;
   --gold: #edae17;
   --line: #d8dfe1;
+  --serif: Georgia, "Times New Roman", serif;
 }
 
 html,
@@ -15,6 +16,11 @@ body {
   background: var(--paper);
 }
 
+/*
+  Type scale (base 34px on a 1600 x 900 canvas):
+  labels 0.6em (~20px) · supporting text 0.78em (~27px) · body 0.9em (~31px)
+  card headings 1.15em (~39px) · h2 2.25em (~77px) · big figures 2.4em+
+*/
 .reveal {
   color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
@@ -26,32 +32,46 @@ body {
   text-align: left;
 }
 
+/*
+  Each slide is a vertical flex column. The main visual block on each slide
+  uses auto margins to sit in the space below the title, and footer lines
+  (codas, proof strips, bands) are pushed to the bottom in normal flow.
+*/
 .reveal .slides section {
   box-sizing: border-box;
+  flex-direction: column;
   height: 100%;
-  padding: 56px 70px 48px;
+  padding: 60px 80px 52px;
+}
+
+/* PDF export: Reveal's print stylesheet forces block display, zero padding,
+   and auto height, so restore the slide frame explicitly. */
+html.reveal-print .reveal .slides section {
+  display: flex !important;
+  height: 900px;
+  padding: 60px 80px 52px !important;
 }
 
 .reveal h1,
 .reveal h2 {
   color: var(--accent);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--serif);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
   margin: 0;
   text-transform: none;
 }
 
 .reveal h1 {
-  font-size: 2.35em;
-  line-height: 1.03;
-  max-width: 1200px;
+  font-size: 3em;
+  line-height: 1.04;
+  max-width: 1340px;
 }
 
 .reveal h2 {
-  font-size: 1.82em;
+  font-size: 2.25em;
   line-height: 1.08;
-  max-width: 1300px;
+  max-width: 1400px;
 }
 
 .reveal p,
@@ -65,107 +85,56 @@ body {
 
 .reveal .eyebrow {
   color: var(--accent);
-  font-size: 0.46em;
+  font-size: 0.6em;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  margin: 0 0 20px;
+  letter-spacing: 0.14em;
+  margin: 0 0 22px;
   text-transform: uppercase;
 }
 
+/* Title slide */
+
 .rule {
   background: var(--accent);
-  height: 8px;
-  margin-bottom: 92px;
-  width: 120px;
+  flex-shrink: 0;
+  height: 10px;
+  width: 150px;
+}
+
+.title-slide .eyebrow {
+  margin-top: auto;
 }
 
 .subtitle {
   color: var(--muted);
-  font-size: 0.72em;
-  margin-top: 34px;
+  font-size: 1em;
+  margin-top: 40px;
 }
 
 .title-meta {
   border-top: 1px solid var(--line);
-  bottom: 62px;
   display: flex;
-  font-size: 0.5em;
+  font-size: 0.72em;
   justify-content: space-between;
-  left: 70px;
-  padding-top: 17px;
-  position: absolute;
-  right: 70px;
+  margin-top: auto;
+  padding-top: 20px;
 }
+
+/* Shared pieces */
 
 .two-col {
   display: grid;
-  gap: 65px;
+  gap: 80px;
   grid-template-columns: 1fr 1fr;
-}
-
-.opening-grid {
-  margin-top: 50px;
 }
 
 .label {
   color: var(--accent);
-  font-size: 0.43em;
+  font-size: 0.6em;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin: 0 0 14px;
+  margin: 0 0 18px;
   text-transform: uppercase;
-}
-
-.big-copy {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.92em;
-  line-height: 1.25;
-  margin: 0 0 36px;
-}
-
-.purpose-panel {
-  border-left: 5px solid var(--accent);
-  padding: 3px 0 0 36px;
-}
-
-.purpose-panel > p:not(.label) {
-  font-size: 0.72em;
-  margin: 0 0 22px;
-}
-
-.purpose-panel .mission {
-  color: var(--accent-dark);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.82em;
-}
-
-.stat-row,
-.record-grid {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.stat-row div {
-  border-top: 1px solid var(--line);
-  padding-top: 12px;
-}
-
-.stat-row strong,
-.stat-row span {
-  display: block;
-}
-
-.stat-row strong {
-  color: var(--accent);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.82em;
-}
-
-.stat-row span {
-  color: var(--muted);
-  font-size: 0.39em;
-  margin-top: 4px;
 }
 
 .accent {
@@ -175,105 +144,171 @@ body {
 
 .lead {
   color: var(--muted);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.86em;
-  margin: 30px 0;
+  font-family: var(--serif);
+  font-size: 1.05em;
+  margin: 30px 0 0;
 }
 
 .lead.narrow {
-  max-width: 1100px;
+  max-width: 1250px;
 }
+
+.coda {
+  color: var(--muted);
+  font-size: 0.78em;
+  font-style: italic;
+  margin: 0;
+}
+
+.three-col {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Why this work */
+
+.opening-grid {
+  align-items: center;
+  margin: auto 0;
+}
+
+.big-copy {
+  font-family: var(--serif);
+  font-size: 1.3em;
+  line-height: 1.22;
+  margin: 0 0 50px;
+}
+
+.purpose-panel {
+  border-left: 6px solid var(--accent);
+  padding: 6px 0 6px 44px;
+}
+
+.purpose-panel > p:not(.label) {
+  font-size: 0.95em;
+  margin: 0 0 30px;
+}
+
+.purpose-panel .mission {
+  color: var(--accent-dark);
+  font-family: var(--serif);
+  font-size: 1.1em;
+  margin-bottom: 0;
+}
+
+.stat-row,
+.record-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stat-row div {
+  border-top: 2px solid var(--accent);
+  padding-top: 16px;
+}
+
+.stat-row strong,
+.stat-row span {
+  display: block;
+}
+
+.stat-row strong {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 2.2em;
+  line-height: 1;
+}
+
+.stat-row span {
+  color: var(--muted);
+  font-size: 0.66em;
+  margin-top: 10px;
+}
+
+/* Decisions are made with faculty */
 
 .evidence {
   background: white;
-  border-left: 6px solid var(--accent);
-  margin-top: 48px;
-  padding: 26px 32px;
+  border-left: 8px solid var(--accent);
+  margin: auto 0;
+  padding: 40px 52px;
+}
+
+.evidence .label {
+  margin-bottom: 22px;
 }
 
 .evidence p {
-  font-size: 0.57em;
-  margin: 10px 0 0;
+  font-size: 0.9em;
+  margin: 18px 0 0;
 }
 
 .evidence-line {
   align-items: baseline;
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 18px 36px;
 }
 
 .evidence-line strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.9em;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.6em;
 }
 
 .evidence-line span {
   color: var(--muted);
-  font-size: 0.54em;
+  font-size: 0.85em;
 }
 
-.coda {
-  bottom: 52px;
-  color: var(--muted);
-  font-size: 0.52em;
-  font-style: italic;
-  left: 70px;
-  margin: 0;
-  position: absolute;
-  right: 70px;
-}
+/* Make the arithmetic visible */
 
 .arithmetic-grid {
   display: grid;
-  gap: 14px;
+  gap: 22px;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: 48px;
-  max-width: 1000px;
+  margin: auto 0;
 }
 
 .arithmetic-grid span {
   background: white;
   border: 1px solid var(--line);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.66em;
-  padding: 20px 24px;
+  border-left: 6px solid var(--accent);
+  font-family: var(--serif);
+  font-size: 1.2em;
+  padding: 40px 44px;
 }
 
 .proof-strip {
   align-items: baseline;
-  bottom: 62px;
   display: flex;
-  gap: 24px;
-  left: 70px;
-  position: absolute;
+  gap: 28px;
 }
 
 .proof-strip strong {
   color: var(--accent);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.78em;
+  font-family: var(--serif);
+  font-size: 1.15em;
 }
 
 .proof-strip span {
   color: var(--muted);
-  font-size: 0.51em;
+  font-size: 0.8em;
 }
 
-.three-col {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-}
+/* Tell people the truth early */
 
 .compact-cards {
-  margin-top: 54px;
+  margin-top: auto;
 }
 
 .compact-cards > div {
   background: white;
-  border-top: 4px solid var(--accent);
-  min-height: 160px;
-  padding: 22px;
+  border-top: 6px solid var(--accent);
+  min-height: 250px;
+  padding: 32px 34px;
 }
 
 .compact-cards span,
@@ -284,38 +319,42 @@ body {
 
 .compact-cards .number {
   color: var(--accent);
-  font-size: 0.38em;
+  font-size: 0.6em;
   font-weight: 700;
   letter-spacing: 0.08em;
-  margin-bottom: 22px;
+  margin-bottom: 26px;
 }
 
 .compact-cards strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.68em;
+  font-family: var(--serif);
+  font-size: 1.2em;
 }
 
 .compact-cards p {
   color: var(--muted);
-  font-size: 0.43em;
-  margin: 10px 0 0;
+  font-size: 0.82em;
+  margin: 14px 0 0;
 }
 
 .evidence.single-line {
-  margin-top: 28px;
-  padding: 17px 24px;
+  border-left-width: 6px;
+  margin: 40px 0 auto;
+  padding: 24px 32px;
 }
 
 .evidence.single-line p {
+  font-size: 0.8em;
   margin: 0;
 }
+
+/* Accountability: assurance of learning */
 
 .aol-flow {
   align-items: stretch;
   display: grid;
-  gap: 14px;
-  grid-template-columns: 0.8fr 1.15fr 1.15fr 0.8fr;
-  margin-top: 58px;
+  gap: 18px;
+  grid-template-columns: 0.85fr 1.1fr 1.1fr 0.85fr;
+  margin-top: auto;
 }
 
 .aol-flow > div {
@@ -323,8 +362,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 210px;
-  padding: 20px;
+  min-height: 340px;
+  padding: 30px;
   text-align: center;
 }
 
@@ -338,104 +377,117 @@ body {
 }
 
 .metric strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.7em;
+  font-family: var(--serif);
+  font-size: 2.8em;
   line-height: 1;
 }
 
 .metric span {
-  font-size: 0.42em;
-  line-height: 1.25;
-  margin-top: 12px;
+  font-size: 0.66em;
+  line-height: 1.3;
+  margin-top: 16px;
 }
 
 .flow-step {
   border: 1px solid var(--line);
-  position: relative;
+  border-top: 6px solid var(--accent);
 }
 
 .flow-step span {
   color: var(--accent);
-  font-size: 0.38em;
+  font-size: 0.6em;
   font-weight: 700;
   letter-spacing: 0.08em;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   text-transform: uppercase;
 }
 
 .flow-step b {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.56em;
+  font-family: var(--serif);
+  font-size: 1em;
   font-weight: 400;
+  line-height: 1.3;
 }
 
 .result {
-  color: var(--muted);
-  font-size: 0.48em;
-  margin-top: 20px;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1em;
+  margin: 28px 0 auto;
   text-align: right;
 }
 
+/* Momentum */
+
 .momentum-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 72px;
-  max-width: 1320px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto 0;
 }
 
 .momentum-list span {
+  align-items: flex-end;
   background: white;
   border: 1px solid var(--line);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.63em;
-  padding: 20px 26px;
+  border-top: 6px solid var(--accent);
+  display: flex;
+  font-family: var(--serif);
+  font-size: 1.05em;
+  line-height: 1.25;
+  min-height: 170px;
+  padding: 28px 32px;
 }
+
+/* First 90 days */
 
 .ninety-days {
   display: grid;
-  gap: 24px;
+  gap: 36px;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 64px;
+  margin: auto 0;
 }
 
 .ninety-days > div {
-  border-top: 5px solid var(--accent);
-  padding-top: 18px;
+  border-top: 6px solid var(--accent);
+  padding-top: 24px;
 }
 
 .ninety-days span {
-  color: var(--muted);
+  color: var(--accent);
   display: block;
-  font-size: 0.36em;
+  font-size: 0.6em;
   font-weight: 700;
+  letter-spacing: 0.08em;
   margin-bottom: 30px;
 }
 
 .ninety-days strong {
   display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.9em;
+  font-family: var(--serif);
+  font-size: 1.7em;
 }
 
 .ninety-days p {
   color: var(--muted);
-  font-size: 0.46em;
-  margin: 10px 0 0;
+  font-size: 0.88em;
+  margin: 16px 0 0;
 }
+
+/* Opportunity 1: accounting pipeline */
 
 .question-grid {
   display: grid;
-  gap: 18px;
+  gap: 28px;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 45px;
+  margin-top: auto;
 }
 
 .question-grid > div {
   background: white;
-  border-top: 4px solid var(--accent);
-  min-height: 150px;
-  padding: 22px;
+  border-top: 6px solid var(--accent);
+  min-height: 280px;
+  padding: 32px 34px;
 }
 
 .question-grid span,
@@ -445,55 +497,52 @@ body {
 
 .question-grid span {
   color: var(--accent);
-  font-size: 0.39em;
+  font-size: 0.6em;
   font-weight: 700;
   letter-spacing: 0.08em;
-  margin-bottom: 22px;
+  margin-bottom: 26px;
   text-transform: uppercase;
 }
 
 .question-grid strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.57em;
+  font-family: var(--serif);
+  font-size: 1.05em;
+  font-weight: 400;
   line-height: 1.3;
 }
 
 .colleague-line {
   color: var(--accent-dark);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.56em;
-  margin: 27px 0 0;
+  font-family: var(--serif);
+  font-size: 0.95em;
+  margin: 36px 0 auto;
 }
 
 .todo-callout {
   background: #fff8e7;
   border: 1px solid var(--gold);
-  bottom: 42px;
   color: var(--accent);
-  font-size: 0.36em;
-  left: 70px;
-  padding: 10px 14px;
-  position: absolute;
-  right: 70px;
+  font-size: 0.55em;
+  margin-top: 20px;
+  padding: 12px 18px;
 }
 
-.todo-callout.subtle {
-  bottom: 28px;
-}
+/* Opportunity 2: assessment */
 
 .assessment-layout {
+  align-items: center;
   display: grid;
-  gap: 42px;
+  gap: 56px;
   grid-template-columns: 1.2fr 0.8fr;
-  margin-top: 38px;
+  margin: auto 0;
 }
 
 .problem {
   color: var(--accent-dark);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.76em;
+  font-family: var(--serif);
+  font-size: 1.2em;
   line-height: 1.25;
-  margin: 0 0 28px;
+  margin: 0 0 32px;
 }
 
 .clean-list {
@@ -504,9 +553,9 @@ body {
 
 .clean-list li {
   border-top: 1px solid var(--line);
-  font-size: 0.48em;
+  font-size: 0.88em;
   margin: 0;
-  padding: 13px 0 11px 28px;
+  padding: 20px 0 18px 38px;
   position: relative;
 }
 
@@ -521,7 +570,7 @@ body {
 .standards-card {
   background: var(--accent);
   color: white;
-  padding: 28px;
+  padding: 40px 42px;
 }
 
 .standards-card .label {
@@ -530,47 +579,49 @@ body {
 
 .standards-card > strong {
   display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1em;
-  margin: 18px 0;
+  font-family: var(--serif);
+  font-size: 1.6em;
+  margin: 14px 0 18px;
 }
 
 .standards-card > p:not(.label) {
-  font-size: 0.43em;
-  margin: 0 0 24px;
+  font-size: 0.8em;
+  margin: 0 0 28px;
 }
 
 .standards-card small {
   color: #d2d8dc;
   display: block;
-  font-size: 0.32em;
-  margin-top: 22px;
+  font-size: 0.62em;
+  margin-top: 24px;
 }
 
 .ratio-row {
   display: flex;
-  gap: 8px;
+  gap: 12px;
 }
 
 .ratio-row span {
   border: 1px solid var(--accent-light);
-  font-size: 0.35em;
-  padding: 8px 10px;
+  font-size: 0.66em;
+  padding: 10px 14px;
 }
+
+/* Opportunity 3: AI-augmented fund */
 
 .bridge {
   align-items: stretch;
   display: grid;
-  gap: 18px;
-  grid-template-columns: 1fr 0.35fr 1fr;
-  margin-top: 52px;
+  gap: 24px;
+  grid-template-columns: 1fr 0.3fr 1fr;
+  margin-top: auto;
 }
 
 .bridge-end {
   background: white;
-  border-top: 5px solid var(--accent);
-  min-height: 150px;
-  padding: 25px;
+  border-top: 6px solid var(--accent);
+  min-height: 250px;
+  padding: 34px 38px;
 }
 
 .bridge-end strong,
@@ -579,104 +630,107 @@ body {
 }
 
 .bridge-end strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.72em;
+  font-family: var(--serif);
+  font-size: 1.35em;
   line-height: 1.2;
 }
 
 .bridge-end span {
   color: var(--muted);
-  font-size: 0.39em;
-  margin-top: 14px;
+  font-size: 0.8em;
+  margin-top: 18px;
 }
 
 .bridge-center {
   align-items: center;
   color: var(--accent);
   display: flex;
-  font-size: 0.38em;
+  font-size: 0.62em;
   font-weight: 700;
   justify-content: center;
   letter-spacing: 0.08em;
-  line-height: 1.2;
+  line-height: 1.3;
   text-align: center;
   text-transform: uppercase;
 }
 
 .use-cases {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 32px 0 auto;
 }
 
 .use-cases span {
   border: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.37em;
-  padding: 8px 14px;
+  color: var(--ink);
+  font-size: 0.78em;
+  padding: 18px 20px;
+  text-align: center;
 }
+
+/* Sequence */
 
 .sequence {
   display: grid;
-  gap: 36px;
+  gap: 40px;
   grid-template-columns: 1fr 1fr;
-  margin-top: 38px;
+  margin: auto 0;
 }
 
 .sequence > div {
   background: white;
-  border-top: 5px solid var(--accent);
-  padding: 22px 28px;
+  border-top: 6px solid var(--accent);
+  padding: 30px 36px;
 }
 
 .sequence .year {
   color: var(--accent);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.75em;
-  margin: 0 0 15px;
+  font-family: var(--serif);
+  font-size: 1.3em;
+  margin: 0 0 18px;
 }
 
 .sequence ul {
   margin: 0;
-  padding-left: 22px;
+  padding-left: 30px;
 }
 
 .sequence li {
-  font-size: 0.43em;
-  margin: 7px 0;
+  font-size: 0.9em;
+  margin: 12px 0;
 }
 
 .engagement-band {
   align-items: center;
   background: var(--accent);
-  bottom: 45px;
   color: white;
   display: flex;
+  gap: 30px;
   justify-content: space-between;
-  left: 70px;
-  padding: 15px 22px;
-  position: absolute;
-  right: 70px;
+  padding: 22px 30px;
 }
 
 .engagement-band strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.46em;
+  font-family: var(--serif);
+  font-size: 0.82em;
+  font-weight: 400;
 }
 
 .engagement-band span {
   color: #d9dee1;
-  font-size: 0.34em;
+  font-size: 0.66em;
 }
 
+/* Record: teaching, scholarship, service */
+
 .teaching-record {
-  margin-top: 76px;
+  margin: auto 0;
 }
 
 .record-number {
-  border-top: 5px solid var(--accent);
-  padding-top: 22px;
+  border-top: 6px solid var(--accent);
+  padding-top: 28px;
 }
 
 .record-number strong,
@@ -685,26 +739,28 @@ body {
 }
 
 .record-number strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.35em;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 2.6em;
+  line-height: 1.05;
 }
 
 .record-number span {
   color: var(--muted);
-  font-size: 0.43em;
-  margin-top: 10px;
+  font-size: 0.82em;
+  margin-top: 16px;
 }
 
 .publication-line {
   display: grid;
-  gap: 18px;
+  gap: 28px;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 70px;
+  margin-top: auto;
 }
 
 .publication-line > div {
-  border-top: 1px solid var(--line);
-  padding-top: 18px;
+  border-top: 6px solid var(--accent);
+  padding-top: 26px;
 }
 
 .publication-line span,
@@ -714,83 +770,97 @@ body {
 
 .publication-line span {
   color: var(--accent);
-  font-size: 0.42em;
+  font-size: 0.66em;
   font-weight: 700;
-  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .publication-line strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.65em;
+  font-family: var(--serif);
+  font-size: 1.3em;
   font-weight: 400;
+}
+
+.publication-line + .lead {
+  margin: 56px 0 auto;
 }
 
 .service-grid {
   display: grid;
-  gap: 20px;
+  gap: 28px;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 64px;
+  margin: auto 0;
 }
 
 .service-grid > div {
   background: white;
-  border-top: 4px solid var(--accent);
-  min-height: 170px;
-  padding: 23px;
+  border-top: 6px solid var(--accent);
+  min-height: 300px;
+  padding: 32px 34px;
 }
 
 .service-grid strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.68em;
+  font-family: var(--serif);
+  font-size: 1.25em;
 }
 
 .service-grid p {
   color: var(--muted);
-  font-size: 0.42em;
-  margin: 16px 0 0;
+  font-size: 0.86em;
+  margin: 20px 0 0;
 }
 
+/* Closing */
+
 .closing-slide h2 {
-  font-size: 1.66em;
-  line-height: 1.22;
-  margin-top: 50px;
+  font-size: 2.15em;
+  line-height: 1.2;
+  margin-top: auto;
 }
 
 .closing-rule {
   background: var(--accent);
-  height: 7px;
-  margin-top: 54px;
-  width: 110px;
+  flex-shrink: 0;
+  height: 8px;
+  margin-top: 56px;
+  width: 130px;
 }
 
 .closing-line {
   color: var(--accent-dark);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.67em;
-  margin-top: 25px;
+  font-family: var(--serif);
+  font-size: 1.1em;
+  margin: 30px 0 auto;
 }
 
 .questions {
-  bottom: 55px;
   color: var(--muted);
-  font-size: 0.43em;
-  left: 70px;
+  font-size: 0.66em;
   letter-spacing: 0.1em;
-  position: absolute;
+  margin: 0;
   text-transform: uppercase;
 }
+
+/* Reveal chrome */
 
 .reveal .slide-number {
   background: transparent;
   color: var(--muted);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   right: 24px;
+}
+
+.reveal .slide-number a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .reveal .progress {
   color: var(--accent);
-  height: 4px;
+  height: 5px;
 }
 
 @media print {
