@@ -334,20 +334,20 @@ html.reveal-print .reveal .slides section {
 
 /* Make the arithmetic visible */
 
-.arithmetic-grid {
-  display: grid;
-  gap: 22px;
-  grid-template-columns: repeat(2, 1fr);
+.arithmetic {
   margin: auto 0;
 }
 
-.arithmetic-grid span {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-left: 6px solid var(--accent);
-  font-family: var(--serif);
-  font-size: 1.2em;
-  padding: 40px 44px;
+.arithmetic .compact-cards {
+  margin-top: 0;
+}
+
+.arithmetic .compact-cards > div {
+  min-height: 0;
+}
+
+.arithmetic .evidence.single-line {
+  margin: 28px 0 0;
 }
 
 .proof-strip {
