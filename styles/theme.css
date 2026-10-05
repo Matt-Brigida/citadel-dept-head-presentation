@@ -8,11 +8,35 @@
   --accent-light: #7badd3;
   --gold: #edae17;
   --line: #d8dfe1;
+  --card: #ffffff;
+  --accent-fill: #002856;
+  --on-accent: #ffffff;
+  --on-accent-muted: #d2d8dc;
+  --todo-bg: #fff8e7;
   --serif: Georgia, "Times New Roman", serif;
 }
 
+/* Working theme: add data-theme="dark" to <html> in index.html.
+   Remove it to return to the presentation (light) theme. */
+:root[data-theme="dark"] {
+  --ink: #e4e9ee;
+  --muted: #a4aeb7;
+  --paper: #0e161e;
+  --paper-deep: #223140;
+  --accent: #9cc4e4;
+  --accent-dark: #9cc4e4;
+  --accent-light: #9cc4e4;
+  --line: #2d3b48;
+  --card: #15202b;
+  --accent-fill: #1d4a7a;
+  --on-accent: #ffffff;
+  --on-accent-muted: #c9d4de;
+  --todo-bg: #2b2414;
+}
+
 html,
-body {
+body,
+.reveal-viewport {
   background: var(--paper);
 }
 
@@ -230,7 +254,7 @@ html.reveal-print .reveal .slides section {
 /* Decisions are made with faculty */
 
 .evidence {
-  background: white;
+  background: var(--card);
   border-left: 8px solid var(--accent);
   margin: auto 0;
   padding: 40px 52px;
@@ -273,7 +297,7 @@ html.reveal-print .reveal .slides section {
 }
 
 .arithmetic-grid span {
-  background: white;
+  background: var(--card);
   border: 1px solid var(--line);
   border-left: 6px solid var(--accent);
   font-family: var(--serif);
@@ -305,7 +329,7 @@ html.reveal-print .reveal .slides section {
 }
 
 .compact-cards > div {
-  background: white;
+  background: var(--card);
   border-top: 6px solid var(--accent);
   min-height: 250px;
   padding: 32px 34px;
@@ -372,8 +396,8 @@ html.reveal-print .reveal .slides section {
 }
 
 .metric.highlight {
-  background: var(--accent);
-  color: white;
+  background: var(--accent-fill);
+  color: var(--on-accent);
 }
 
 .metric strong {
@@ -428,7 +452,7 @@ html.reveal-print .reveal .slides section {
 
 .momentum-list span {
   align-items: flex-end;
-  background: white;
+  background: var(--card);
   border: 1px solid var(--line);
   border-top: 6px solid var(--accent);
   display: flex;
@@ -484,7 +508,7 @@ html.reveal-print .reveal .slides section {
 }
 
 .question-grid > div {
-  background: white;
+  background: var(--card);
   border-top: 6px solid var(--accent);
   min-height: 280px;
   padding: 32px 34px;
@@ -519,7 +543,7 @@ html.reveal-print .reveal .slides section {
 }
 
 .todo-callout {
-  background: #fff8e7;
+  background: var(--todo-bg);
   border: 1px solid var(--gold);
   color: var(--accent);
   font-size: 0.55em;
@@ -568,8 +592,8 @@ html.reveal-print .reveal .slides section {
 }
 
 .standards-card {
-  background: var(--accent);
-  color: white;
+  background: var(--accent-fill);
+  color: var(--on-accent);
   padding: 40px 42px;
 }
 
@@ -590,7 +614,7 @@ html.reveal-print .reveal .slides section {
 }
 
 .standards-card small {
-  color: #d2d8dc;
+  color: var(--on-accent-muted);
   display: block;
   font-size: 0.62em;
   margin-top: 24px;
@@ -618,7 +642,7 @@ html.reveal-print .reveal .slides section {
 }
 
 .bridge-end {
-  background: white;
+  background: var(--card);
   border-top: 6px solid var(--accent);
   min-height: 250px;
   padding: 34px 38px;
@@ -679,7 +703,7 @@ html.reveal-print .reveal .slides section {
 }
 
 .sequence > div {
-  background: white;
+  background: var(--card);
   border-top: 6px solid var(--accent);
   padding: 30px 36px;
 }
@@ -703,8 +727,8 @@ html.reveal-print .reveal .slides section {
 
 .engagement-band {
   align-items: center;
-  background: var(--accent);
-  color: white;
+  background: var(--accent-fill);
+  color: var(--on-accent);
   display: flex;
   gap: 30px;
   justify-content: space-between;
@@ -718,7 +742,7 @@ html.reveal-print .reveal .slides section {
 }
 
 .engagement-band span {
-  color: #d9dee1;
+  color: var(--on-accent-muted);
   font-size: 0.66em;
 }
 
@@ -795,7 +819,7 @@ html.reveal-print .reveal .slides section {
 }
 
 .service-grid > div {
-  background: white;
+  background: var(--card);
   border-top: 6px solid var(--accent);
   min-height: 300px;
   padding: 32px 34px;
