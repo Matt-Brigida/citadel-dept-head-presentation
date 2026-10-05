@@ -287,6 +287,51 @@ html.reveal-print .reveal .slides section {
   font-size: 0.85em;
 }
 
+.decision-pair {
+  display: grid;
+  gap: 0 28px;
+  grid-template-columns: 1fr 1fr;
+  margin: auto 0;
+}
+
+.decision-pair > .label {
+  grid-column: 1 / -1;
+}
+
+.decision-card {
+  background: var(--card);
+  border-top: 6px solid var(--accent);
+  padding: 30px 36px 34px;
+}
+
+.decision-card > strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.15em;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.decision-card dl {
+  margin: 0;
+}
+
+.decision-card dt {
+  color: var(--accent);
+  font-size: 0.58em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-top: 22px;
+  text-transform: uppercase;
+}
+
+.decision-card dd {
+  font-size: 0.82em;
+  line-height: 1.35;
+  margin: 6px 0 0;
+}
+
 /* Make the arithmetic visible */
 
 .arithmetic-grid {
