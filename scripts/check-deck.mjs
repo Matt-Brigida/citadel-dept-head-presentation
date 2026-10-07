@@ -6,7 +6,7 @@ const notesCount = (html.match(/<aside class="notes" data-markdown>/g) || []).le
 const timings = [...html.matchAll(/data-timing="(\d+)"/g)].map((match) => Number(match[1]));
 const failures = [];
 
-if (slideCount !== 21) failures.push(`expected 21 slides, found ${slideCount}`);
+if (slideCount !== 23) failures.push(`expected 23 slides, found ${slideCount}`);
 if (notesCount !== slideCount) failures.push(`expected ${slideCount} notes blocks, found ${notesCount}`);
 if (timings.length !== slideCount) failures.push(`expected ${slideCount} numeric timing cues, found ${timings.length}`);
 if (timings.reduce((sum, timing) => sum + timing, 0) !== 2400) failures.push("slide timings do not total 40 minutes");

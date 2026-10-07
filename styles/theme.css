@@ -810,6 +810,14 @@ html.reveal-print .reveal .slides section {
   font-size: 0.66em;
 }
 
+.context-strip {
+  margin: 30px 0 auto;
+}
+
+.dna-why {
+  margin: 28px 0 auto;
+}
+
 .todo-callout {
   background: var(--todo-bg);
   border: 1px solid var(--gold);
@@ -817,6 +825,100 @@ html.reveal-print .reveal .slides section {
   font-size: 0.55em;
   margin-top: 20px;
   padding: 12px 18px;
+}
+
+/* AI in our DNA */
+
+.dna-layout {
+  align-items: start;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: 1.1fr 0.9fr;
+  margin: auto 0;
+}
+
+.dna-option {
+  align-items: center;
+  border: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 18px 26px;
+}
+
+.dna-option > strong {
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 0.95em;
+  font-weight: 400;
+}
+
+.dna-preferred {
+  background: var(--card);
+  border: 1px solid var(--accent);
+  border-left: 6px solid var(--accent);
+}
+
+.dna-preferred > strong {
+  color: var(--ink);
+}
+
+.dna-stats {
+  display: flex;
+  gap: 26px;
+  text-align: center;
+}
+
+.dna-stats b,
+.dna-stats span {
+  display: block;
+}
+
+.dna-stats b {
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 1.3em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.dna-preferred .dna-stats b {
+  color: var(--accent);
+}
+
+.dna-stats span {
+  color: var(--muted);
+  font-size: 0.5em;
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+.dna-examples > div {
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.dna-examples span,
+.dna-examples strong {
+  display: block;
+}
+
+.dna-examples span {
+  color: var(--muted);
+  font-size: 0.68em;
+}
+
+.dna-examples strong {
+  font-family: var(--serif);
+  font-size: 1em;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.dna-examples strong::before {
+  color: var(--accent);
+  content: "\2192\00a0";
 }
 
 /* Opportunity 2: assessment */
