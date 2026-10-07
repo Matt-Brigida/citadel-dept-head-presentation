@@ -5,8 +5,9 @@ Resolve these items before Friday, October 16, 2026. Search for `TODO:` in
 
 ## Facts requiring verification
 
-- [ ] Confirm South Carolina's CPA licensure pathways in force on the visit date, including whether an alternative to 150 semester hours has been enacted, its effective date, experience requirements, and any transition rules.
+- [x] Confirm South Carolina's CPA licensure pathways. S. 176, signed May 12, 2025, effective June 30, 2025: bachelor's + 2 years' experience, or master's or bachelor's + 150 hours + 1 year; exam window 18 to 36 months (SC LLR Board of Accountancy notice, llr.sc.gov/acct). Still unverified and kept off the slides: specific hour counts, "Act 34," non-CPA supervision, and expanded attest definitions.
 - [ ] Confirm The Citadel's current accounting curriculum, total hours, graduate pathways, analytics content, CPA advising language, and any announced curricular changes.
+  - Programs confirmed: B.S.B.A. in Business Administration with Accounting and Finance concentrations, and a Minor in Accounting. No departmental graduate program. Still open: how the curriculum and advising have responded to S. 176, and whether students use any Citadel graduate program (such as an MBA, if offered) to reach 150 hours. The department web page's CPA footnote still cites the 150-hour requirement and encourages graduate school (checked October 2026); slide 11 notes mention this tactfully. Recheck before the visit in case it has been updated.
 - [ ] Confirm the official name and current format of the Student-Managed Investment Fund.
 - [ ] Confirm the official name, capitalization, and current use of the Rick and Mary Lee Bastin Financial Leadership Lab.
 - [ ] Confirm that the Baker School currently describes its professional pathways as including accounting and financial services, and use its exact terminology.
