@@ -6,10 +6,10 @@ const notesCount = (html.match(/<aside class="notes" data-markdown>/g) || []).le
 const timings = [...html.matchAll(/data-timing="(\d+)"/g)].map((match) => Number(match[1]));
 const failures = [];
 
-if (slideCount !== 18) failures.push(`expected 18 slides, found ${slideCount}`);
+if (slideCount !== 20) failures.push(`expected 20 slides, found ${slideCount}`);
 if (notesCount !== slideCount) failures.push(`expected ${slideCount} notes blocks, found ${notesCount}`);
 if (timings.length !== slideCount) failures.push(`expected ${slideCount} numeric timing cues, found ${timings.length}`);
-if (timings.reduce((sum, timing) => sum + timing, 0) !== 1500) failures.push("slide timings do not total 25 minutes");
+if (timings.reduce((sum, timing) => sum + timing, 0) !== 2400) failures.push("slide timings do not total 40 minutes");
 if (html.includes("—")) failures.push("found an em dash in slides or notes");
 if (!html.includes("TODO:")) failures.push("expected visible verification TODOs");
 if (!html.includes("./vendor/reveal/")) failures.push("Reveal.js is not loaded locally");
@@ -21,4 +21,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Deck checks passed: ${slideCount} slides, ${notesCount} notes blocks, 25:00 total, local Reveal.js.`);
+console.log(`Deck checks passed: ${slideCount} slides, ${notesCount} notes blocks, 40:00 total, local Reveal.js.`);

@@ -17,7 +17,7 @@ npm run serve
 
 Open <http://127.0.0.1:4173>. Use the arrow keys to navigate and press `S` to
 open the speaker-notes window. The notes include cumulative timing cues for a
-25-minute talk.
+40-minute talk, leaving about 20 minutes of the hour for discussion.
 
 To simulate the interview environment, disconnect from the network and reload
 the presentation. The preferred path is the local server, but the deck now also
