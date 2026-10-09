@@ -38,6 +38,15 @@ browser is not in a standard Linux location. For a manual export, run the server
 open <http://127.0.0.1:4173/?print-pdf>, and print to PDF in landscape mode with
 background graphics enabled and margins disabled.
 
+For a high-contrast black-and-white copy intended for printing and review:
+
+```bash
+npm run pdf:review
+```
+
+The result is `dist/brigida-citadel-review.pdf`. This export temporarily applies
+a grayscale print palette and does not change the dark presentation theme.
+
 ### Validate and update Reveal.js
 
 ```bash

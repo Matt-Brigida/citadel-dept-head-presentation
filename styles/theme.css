@@ -34,6 +34,37 @@
   --todo-bg: #2b2414;
 }
 
+/* High-contrast grayscale palette used only by the printable review export. */
+:root[data-theme="print-review"] {
+  --ink: #000000;
+  --muted: #303030;
+  --paper: #ffffff;
+  --paper-deep: #e8e8e8;
+  --accent: #000000;
+  --accent-dark: #000000;
+  --accent-light: #b8b8b8;
+  --gold: #000000;
+  --line: #8a8a8a;
+  --card: #ffffff;
+  --accent-fill: #dddddd;
+  --on-accent: #000000;
+  --on-accent-muted: #303030;
+  --todo-bg: #f2f2f2;
+}
+
+:root[data-theme="print-review"],
+:root[data-theme="print-review"] body,
+:root[data-theme="print-review"] .reveal-viewport,
+:root[data-theme="print-review"] .reveal {
+  background: #ffffff !important;
+}
+
+:root[data-theme="print-review"] .reveal .backgrounds,
+:root[data-theme="print-review"] .reveal .slide-background,
+:root[data-theme="print-review"] .reveal .slide-background-content {
+  background: #ffffff !important;
+}
+
 html,
 body,
 .reveal-viewport {

@@ -4,7 +4,10 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { startServer } from "./serve.mjs";
 
-const output = resolve(process.argv[2] || "dist/brigida-citadel-presentation.pdf");
+const args = process.argv.slice(2);
+const blackAndWhite = args.includes("--black-and-white");
+const outputArgument = args.find((argument) => !argument.startsWith("--"));
+const output = resolve(outputArgument || "dist/brigida-citadel-presentation.pdf");
 const browser = process.env.CHROME_BIN || [
   "/usr/bin/chromium",
   "/usr/bin/chromium-browser",
@@ -113,6 +116,12 @@ try {
     });
     return result.result?.value;
   }, "Reveal.js initialization");
+
+  if (blackAndWhite) {
+    await cdp.send("Runtime.evaluate", {
+      expression: "document.documentElement.setAttribute('data-theme', 'print-review')"
+    });
+  }
 
   await wait(500);
   await cdp.send("Emulation.setEmulatedMedia", { media: "print" });
