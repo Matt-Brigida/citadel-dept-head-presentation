@@ -10,7 +10,7 @@ Resolve these items before Friday, October 16, 2026. Search for `TODO:` in
   - Programs confirmed: B.S.B.A. in Business Administration with Accounting and Finance concentrations, and a Minor in Accounting. No departmental graduate program. Still open: how the curriculum and advising have responded to S. 176, and whether students use any Citadel graduate program (such as an MBA, if offered) to reach 150 hours. The department web page's CPA footnote still cites the 150-hour requirement and encourages graduate school (checked October 2026); slide 11 notes mention this tactfully. Recheck before the visit in case it has been updated.
 - [ ] Confirm the official name and current format of the Student-Managed Investment Fund.
 - [ ] Confirm the official name, capitalization, and current use of the Rick and Mary Lee Bastin Financial Leadership Lab.
-- [ ] Confirm that the Baker School currently describes its professional pathways as including accounting and financial services, and use its exact terminology.
+- [x] Professional pathways: removed from the momentum slide. An AACSB profile lists five "professional pathways," but the Baker School's current pages describe majors instead.
 - [ ] Confirm the current names and scope of the Directors' Institute, Executive Development Institute, and South Carolina Veterans Business Outreach Center before mentioning them aloud.
 - [ ] Confirm that Baker School faculty participation in the Harvard Business School Teaching with Generative AI seminar is appropriate to acknowledge publicly.
 - [ ] Verify the exact wording of The Citadel's current mission statement before using “educate and develop principled leaders.”

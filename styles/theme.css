@@ -635,8 +635,16 @@ html.reveal-print .reveal .slides section {
 .momentum-list {
   display: grid;
   gap: 22px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   margin: auto 0;
+}
+
+.momentum-list span {
+  grid-column: span 2;
+}
+
+.momentum-list span:nth-child(-n + 2) {
+  grid-column: span 3;
 }
 
 .momentum-list span {
@@ -1488,4 +1496,14 @@ html.reveal-print .reveal .slides section {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+}
+
+/* Advocacy */
+
+.advocacy-trio {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.advocacy-band {
+  margin: 36px 0 auto;
 }
