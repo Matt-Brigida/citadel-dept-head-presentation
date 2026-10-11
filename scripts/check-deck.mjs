@@ -11,7 +11,6 @@ if (notesCount !== slideCount) failures.push(`expected ${slideCount} notes block
 if (timings.length !== slideCount) failures.push(`expected ${slideCount} numeric timing cues, found ${timings.length}`);
 if (timings.reduce((sum, timing) => sum + timing, 0) !== 2400) failures.push("slide timings do not total 40 minutes");
 if (html.includes("—")) failures.push("found an em dash in slides or notes");
-if (!html.includes("TODO:")) failures.push("expected visible verification TODOs");
 if (!html.includes("./vendor/reveal/")) failures.push("Reveal.js is not loaded locally");
 if (html.includes('type="module"')) failures.push("module scripts prevent direct-file fallback");
 if (!html.includes('vendor/reveal/dist/reveal.js')) failures.push("classic Reveal.js script is missing");

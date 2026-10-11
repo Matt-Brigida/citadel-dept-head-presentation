@@ -14,7 +14,7 @@ Resolve these items before Friday, October 16, 2026. Search for `TODO:` in
 - [ ] Confirm the current names and scope of the Directors' Institute, Executive Development Institute, and South Carolina Veterans Business Outreach Center before mentioning them aloud.
 - [ ] Confirm that Baker School faculty participation in the Harvard Business School Teaching with Generative AI seminar is appropriate to acknowledge publicly.
 - [ ] Verify the exact wording of The Citadel's current mission statement before using “educate and develop principled leaders.”
-- [ ] Verify the AACSB 2026 standards details against the final published standards and transition guidance: Standard 3.2, the “Additional” classification, the 40 percent SA and 90 percent SA+PA+SP+IA thresholds, the three-year implementation period, and first formal evaluation at 2029-30 visits.
+- [x] AACSB 2026 standards verified against the published standards (effective 1 July 2026): Standard 3.2 teaching effectiveness, "Additional" classification (counts in denominator only), 40% SA and 90% SA+PA+SP+IP, three-year ramp-up, evaluation with 2029-30 visits. Fixed "IA" to "IP".
 - [ ] Confirm Charleston regional sectors worth naming. The current notes mention port and logistics, manufacturing, and financial services.
 - [ ] Confirm the campus visit date, presentation start time, room, display aspect ratio, connection type, and whether the committee wants a PDF in advance.
 
