@@ -1534,3 +1534,25 @@ html.reveal-print .reveal .slides section {
 .phases li {
   margin: 8px 0;
 }
+
+/* Question pause */
+
+.pause-recap {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: 1.15fr 1fr;
+  margin: auto 0;
+}
+
+.pause-recap ul {
+  color: var(--muted);
+  font-size: 0.72em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pause-recap li {
+  border-top: 1px solid var(--line);
+  padding: 9px 0;
+}

@@ -6,10 +6,10 @@ const notesCount = (html.match(/<aside class="notes" data-markdown>/g) || []).le
 const timings = [...html.matchAll(/data-timing="(\d+)"/g)].map((match) => Number(match[1]));
 const failures = [];
 
-if (slideCount !== 23) failures.push(`expected 23 slides, found ${slideCount}`);
+if (slideCount !== 24) failures.push(`expected 24 slides, found ${slideCount}`);
 if (notesCount !== slideCount) failures.push(`expected ${slideCount} notes blocks, found ${notesCount}`);
 if (timings.length !== slideCount) failures.push(`expected ${slideCount} numeric timing cues, found ${timings.length}`);
-if (timings.reduce((sum, timing) => sum + timing, 0) !== 2400) failures.push("slide timings do not total 40 minutes");
+if (timings.reduce((sum, timing) => sum + timing, 0) !== 2580) failures.push("slide timings do not total 43 minutes (40 content + 3 question pause)");
 if (html.includes("—")) failures.push("found an em dash in slides or notes");
 if (!html.includes("./vendor/reveal/")) failures.push("Reveal.js is not loaded locally");
 if (html.includes('type="module"')) failures.push("module scripts prevent direct-file fallback");
@@ -20,4 +20,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Deck checks passed: ${slideCount} slides, ${notesCount} notes blocks, 40:00 total, local Reveal.js.`);
+console.log(`Deck checks passed: ${slideCount} slides, ${notesCount} notes blocks, 43:00 total (incl. 3:00 question pause), local Reveal.js.`);

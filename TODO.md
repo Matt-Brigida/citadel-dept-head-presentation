@@ -25,5 +25,5 @@ Resolve these items before Friday, October 16, 2026. Search for `TODO:` in
 - [ ] Decide whether “about seven adjuncts” should stay in the spoken opening or remain omitted for brevity.
 - [ ] Confirm permission to share the assurance-of-learning scores and the May 10, 2022 retreat response outside SUNY Poly.
 - [ ] Recheck all record figures immediately before the visit: $1 million raised, $250,000 lead gift, five courses, 100+ students, two partnerships, roughly 50 percent Finance enrollment growth, 4.3/5 across 32 reports, and 4.9/4.8 in the two most recent sections.
-- [ ] Rehearse to 40:00, choose which details to cut if discussion begins during the talk, and prepare a 30-minute version in case the committee wants more discussion time.
+- [ ] Rehearse to 40:00 of content (43:00 with the question pause), choose which details to cut if discussion begins during the talk, and prepare a 30-minute version in case the committee wants more discussion time.
 - [ ] Export the final PDF, test it on a second computer with networking disabled, and carry both HTML and PDF copies on two devices.
