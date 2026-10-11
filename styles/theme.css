@@ -1507,3 +1507,30 @@ html.reveal-print .reveal .slides section {
 .advocacy-band {
   margin: 36px 0 auto;
 }
+
+/* Combined listening and sequence slide */
+
+.phases > div {
+  background: var(--card);
+  padding: 24px 32px 28px;
+}
+
+.phases span {
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.phases strong {
+  font-size: 1.2em;
+}
+
+.phases ul {
+  color: var(--muted);
+  font-size: 0.72em;
+  margin: 16px 0 0;
+  padding-left: 26px;
+}
+
+.phases li {
+  margin: 8px 0;
+}
