@@ -8,6 +8,7 @@
     "serve": "node scripts/serve.mjs",
     "pdf": "node scripts/export-pdf.mjs",
     "pdf:review": "node scripts/export-pdf.mjs --black-and-white dist/brigida-citadel-review.pdf",
+    "pdf:all": "npm run -s pdf && npm run -s pdf -- brigida-citadel-presentation.pdf && npm run -s pdf:review",
     "vendor": "node scripts/vendor-reveal.mjs",
     "check": "node scripts/check-deck.mjs"
   },
