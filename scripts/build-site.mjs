@@ -7,7 +7,7 @@ const site = resolve(root, "_site");
 rmSync(site, { recursive: true, force: true });
 mkdirSync(site, { recursive: true });
 
-for (const item of [".nojekyll", "index.html", "styles", "vendor"]) {
+for (const item of [".nojekyll", "images", "index.html", "styles", "vendor"]) {
   cpSync(resolve(root, item), resolve(site, item), { recursive: true });
 }
 
