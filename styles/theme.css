@@ -660,6 +660,10 @@ html.reveal-print .reveal .slides section {
   padding: 28px 32px;
 }
 
+.momentum-ranking {
+  margin-top: 28px;
+}
+
 /* First 90 days */
 
 .ninety-days {
