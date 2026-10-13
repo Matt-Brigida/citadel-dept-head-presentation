@@ -47,6 +47,15 @@ npm run pdf:review
 The result is `dist/brigida-citadel-review.pdf`. This export temporarily applies
 a grayscale print palette and does not change the dark presentation theme.
 
+For a rehearsal copy with each slide followed by a page of its speaker notes:
+
+```bash
+npm run pdf:notes
+```
+
+The result is `dist/brigida-citadel-notes.pdf`, in the same black-and-white
+palette. `npm run pdf:all` rebuilds all four PDFs.
+
 ### Validate and update Reveal.js
 
 ```bash

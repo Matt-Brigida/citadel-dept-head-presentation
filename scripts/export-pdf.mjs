@@ -6,6 +6,7 @@ import { startServer } from "./serve.mjs";
 
 const args = process.argv.slice(2);
 const blackAndWhite = args.includes("--black-and-white");
+const withNotes = args.includes("--notes");
 const outputArgument = args.find((argument) => !argument.startsWith("--"));
 const output = resolve(outputArgument || "dist/brigida-citadel-presentation.pdf");
 const browser = process.env.CHROME_BIN || [
@@ -107,7 +108,9 @@ try {
   await cdp.ready();
   await cdp.send("Page.enable");
   await cdp.send("Runtime.enable");
-  await cdp.send("Page.navigate", { url: "http://127.0.0.1:4174/?print-pdf" });
+  await cdp.send("Page.navigate", {
+    url: `http://127.0.0.1:4174/?print-pdf${withNotes ? "&showNotes=separate-page" : ""}`
+  });
 
   await waitForValue(async () => {
     const result = await cdp.send("Runtime.evaluate", {
@@ -120,6 +123,25 @@ try {
   if (blackAndWhite) {
     await cdp.send("Runtime.evaluate", {
       expression: "document.documentElement.setAttribute('data-theme', 'print-review')"
+    });
+  }
+
+  if (withNotes) {
+    // Each slide is followed by a page of its notes, set for reading aloud.
+    await cdp.send("Runtime.evaluate", {
+      expression: `(() => {
+        const style = document.createElement("style");
+        style.textContent = \`
+          .reveal .speaker-notes-pdf[data-layout=separate-page] {
+            box-sizing: border-box !important;
+            color: #111 !important;
+            font: 22px/1.45 Georgia, serif !important;
+            padding: 56px 90px !important;
+            white-space: pre-line !important;
+          }
+        \`;
+        document.head.appendChild(style);
+      })()`
     });
   }
 
