@@ -19,6 +19,12 @@ Open <http://127.0.0.1:4173>. Use the arrow keys to navigate and press `S` to
 open the speaker-notes window. The notes include cumulative timing cues for a
 40-minute talk plus a 3-minute question pause before the teaching and scholarship section, leaving about 17 minutes of the hour for discussion.
 
+The presentation opens in dark mode. Press `T` to toggle between the dark and
+light themes. To choose a theme before presenting, open
+<http://127.0.0.1:4173/?theme=light> or
+<http://127.0.0.1:4173/?theme=dark>. The selected theme remains in the URL when
+using the keyboard toggle, so a refresh preserves it.
+
 To simulate the interview environment, disconnect from the network and reload
 the presentation. The preferred path is the local server, but the deck now also
 uses classic local scripts so `index.html` can be opened directly as an emergency

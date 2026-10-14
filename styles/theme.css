@@ -16,8 +16,8 @@
   --serif: Georgia, "Times New Roman", serif;
 }
 
-/* Working theme: add data-theme="dark" to <html> in index.html.
-   Remove it to return to the presentation (light) theme. */
+/* The base variables define the light theme. The data-theme="dark" override
+   is the presentation default and can be toggled at runtime. */
 :root[data-theme="dark"] {
   --ink: #e4e9ee;
   --muted: #a4aeb7;
@@ -1445,6 +1445,16 @@ html.reveal-print .reveal .slides section {
 }
 
 /* Closing */
+
+.nutshell-slide h2 {
+  font-size: 2.7em;
+  margin-top: auto;
+}
+
+.nutshell-slide .lead {
+  margin: 40px 0 auto;
+  max-width: 1250px;
+}
 
 .closing-slide h2 {
   font-size: 2.15em;
